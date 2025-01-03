@@ -1,0 +1,97 @@
+﻿@model Labels_KM49.Models.JPrinter
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>JPrinter</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PriTcreation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PriTcreation)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PriTupdate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PriTupdate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PriKey)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PriKey)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PriDescr)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PriDescr)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PriProtocol)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PriProtocol)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PriDialect)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PriDialect)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PriConfig)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PriConfig)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PriTemplate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PriTemplate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PriIseditable)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PriIseditable)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PriOsqueue)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PriOsqueue)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PriUrl)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PriUrl)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PriPrinterset)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PriPrinterset.PrisId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PriRedirprinter)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PriRedirprinter.PriId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.PriId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

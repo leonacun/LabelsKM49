@@ -1,0 +1,112 @@
+﻿@model IEnumerable<Labels_KM49.Models.ViewModels.PilotoViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-md">
+    <h1>Lista de Pilotos</h1>
+
+    <h3>Impresora:</h3>
+    <form asp-action="Index">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="ipAddres" value="10.100.85.108" id="flexRadioDefault1" checked>
+            <label class="form-check-label" for="flexRadioDefault1">
+                Mopar
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="ipAddres" value="10.100.83.33" id="flexRadioDefault2">
+            <label class="form-check-label" for="flexRadioDefault2">
+                IT
+            </label>
+        </div>
+
+        <div class="table-responsive mt-4">
+            <table id="customerDatatable" class="table dt-responsive nowrap" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            Creación
+                        </th>
+                        <th>
+                            Tipo
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Vin)
+                        </th>
+                        <th>
+                            Sequencia
+                        </th>
+                        <th>
+                            Full Vin
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Color)
+                        </th>
+                        <th>
+                            Etiquetas
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Creation)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.type)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Vin)
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Sequence)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FullVin)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Color)
+                            </td>
+                            <td>
+                                @{
+                                    var parms = new Dictionary<string, string>
+                            {
+                            {"vin" , item.Vin},
+                            {"sequence", item.Sequence.ToString()},
+                            {"fullvin", item.FullVin},
+                            {"color", item.Color},
+                            {"type", item.type}
+                            };
+                                }
+                                <input asp-all-route-data="parms" type="submit" value="Imprimir" class="btn btn-dark" />
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </form>
+</div>
+
+@section Scripts
+{
+    <script>
+        $(document).ready(function () {
+            $('#customerDatatable').dataTable({
+                // columnDefs: [
+                //     {
+                //         targets: 0,
+                //         render: DataTable.render.datetime('dd/MMMM/yyyy')
+                //     }
+                // ]
+            });
+
+        });
+    </script>
+}

@@ -1,0 +1,98 @@
+﻿{
+   "CodeGenerationMode": 3,
+   "ContextClassName": "PilotosContext",
+   "ContextNamespace": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": true,
+   "ModelNamespace": null,
+   "OutputContextPath": "Data",
+   "OutputPath": "Models",
+   "PreserveCasingWithRegex": true,
+   "ProjectRootNamespace": "Labels_KM49",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 2,
+   "SelectedToBeGenerated": 0,
+   "T4TemplatePath": null,
+   "Tables": [
+      {
+         "Name": "[dbo].[DashData]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[EJ_E]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ej_FA]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[EJList]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[EJListG2]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[KM49_E]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[KM49_FA]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[KM74]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[PilotosList]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[PilotosListKMG2]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[EJEsinFA]",
+         "ObjectType": 3
+      },
+      {
+         "Name": "[dbo].[EJFAsinG]",
+         "ObjectType": 3
+      },
+      {
+         "Name": "[dbo].[EsinFA]",
+         "ObjectType": 3
+      },
+      {
+         "Name": "[dbo].[FAsinG]",
+         "ObjectType": 3
+      }
+   ],
+   "UiHint": null,
+   "UncountableWords": null,
+   "UseAsyncStoredProcedureCalls": true,
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": false,
+   "UseDateOnlyTimeOnly": false,
+   "UseDbContextSplitting": false,
+   "UseDecimalDataAnnotationForSprocResult": true,
+   "UseFluentApiOnly": false,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": true,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoNavigations": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UsePrefixNavigationNaming": false,
+   "UseSchemaFolders": false,
+   "UseSchemaNamespaces": false,
+   "UseSpatial": false,
+   "UseT4": false
+}

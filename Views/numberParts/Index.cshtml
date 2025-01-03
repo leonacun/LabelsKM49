@@ -1,0 +1,164 @@
+﻿@model IEnumerable<Labels_KM49.Models.ViewModels.JTransferspacketViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container-md">
+    <h1>Filter & Split</h1>
+    <h3 class="d-flex justify-content-end">Filters Options</h3>
+
+    @* formulario section *@
+    <form asp-controller="numberParts" asp-action="Index" method="post">
+        <div class="d-flex justify-content-end p-2 m-2">
+            <div class="m-2">
+                <label>Entries</label>
+            </div>
+            <div>
+                <select name="entries" class="form-select form-select-sm" aria-label="Small  select example">
+                    <option selected>10</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                    <option value="300">300</option>
+                </select>
+            </div>
+            <div class="m-2">
+                <label>Days</label>
+            </div>
+            <div>
+
+                <select name="days" class="form-select form-select-sm" aria-label="Small  select example">
+                    <option selected>1</option>
+                    <option value="10">10</option>
+                    <option value="50">50</option>
+                    <option disabled>Alert slow load!</option>
+                    <option value="150">150 </option>
+                    <option value="200">200</option>
+                    <option value="365">365</option>
+                </select>
+            </div>
+            <div class="m-2">
+                <label>Filter</label>
+            </div>
+            <div>
+                <input name="search" class="form-control form-control-sm" type="text" placeholder="Search" aria-label=".form-control-sm example">
+            </div>
+            <div>
+                <button type="submit" class="btn btn-dark btn-sm ">Show me!</button>
+            </div>
+        </div>
+    </form>
+
+    @* DataTable section *@
+    <div class="table-responsive mt-4">
+        <table id="customerDatatable" class="table dt-responsive nowrap" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>
+                        Split!
+                    </th>
+                    <th>
+                        Creation
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                    <th>
+                        Data
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <!-- Button trigger modal -->
+                            <button id="btn_split" type="button" class="btn_split btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" data-valor="@item.TspData">
+                                Split!
+                            </button>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TspTcreation)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TspStatus)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TspData)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    @* Modal Container*@
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Split Tool</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="valoresCortados"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @* Pagination section *@
+    <div class="d-flex justify-content-end">
+        <div class="p-2 m-2">
+            1 de @ViewBag.recordsTotal
+        </div>
+
+        <div class="m-2">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+
+@*Scripts Seccion*@
+@section Scripts
+{
+    <script>
+        $(document).ready(function () {
+            $('.btn_split').click(function () {
+                var valorBoton = $(this).data('valor');
+                var valoresCortados = valorBoton.split(' ')/* .join(',').split('001').join(',').split('002') */.join(',').split('0000').join(',').split('.').join(',').split(',').filter(valor => valor !== "");
+                var listaHTML = "<ul class='list-group list-group-flush'>";
+                valoresCortados.forEach(function (valor) {
+                    listaHTML += "<li class='list-group-item'>" + valor + "</li>";
+                });
+                listaHTML += "</ul>";
+                $('#valoresCortados').html(listaHTML);
+            });
+        });
+    </script>
+}

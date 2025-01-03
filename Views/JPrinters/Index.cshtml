@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Labels_KM49.Models.JPrinter>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Configuración</h1>
+<h4></h4>
+<input class="form-control" type="number" placeholder="Días a mostrar en la tabla de Pilotos" aria-label="default input example">
+<h4>Selecciona una impresora</h4>
+<div class="table-responsive mt-4">
+    <table id="customerDatatable" class="table dt-responsive nowrap" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th>
+                    Nombre
+                </th>
+                <th>
+                    IP
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PriDescr)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PriOsqueue)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@section Scripts
+                    {
+    <script>
+        $(document).ready(function () {
+
+            $('#customerDatatable').dataTable({
+
+            });
+
+        });
+    </script>
+}

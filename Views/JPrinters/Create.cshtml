@@ -1,0 +1,87 @@
+﻿@model Labels_KM49.Models.JPrinter
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>JPrinter</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PriId" class="control-label"></label>
+                <input asp-for="PriId" class="form-control" />
+                <span asp-validation-for="PriId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PriPrintersetId" class="control-label"></label>
+                <select asp-for="PriPrintersetId" class ="form-control" asp-items="ViewBag.PriPrintersetId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="PriRedirprinterId" class="control-label"></label>
+                <select asp-for="PriRedirprinterId" class ="form-control" asp-items="ViewBag.PriRedirprinterId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="PriKey" class="control-label"></label>
+                <input asp-for="PriKey" class="form-control" />
+                <span asp-validation-for="PriKey" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PriDescr" class="control-label"></label>
+                <input asp-for="PriDescr" class="form-control" />
+                <span asp-validation-for="PriDescr" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PriProtocol" class="control-label"></label>
+                <input asp-for="PriProtocol" class="form-control" />
+                <span asp-validation-for="PriProtocol" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PriDialect" class="control-label"></label>
+                <input asp-for="PriDialect" class="form-control" />
+                <span asp-validation-for="PriDialect" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PriConfig" class="control-label"></label>
+                <input asp-for="PriConfig" class="form-control" />
+                <span asp-validation-for="PriConfig" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PriTemplate" class="control-label"></label>
+                <input asp-for="PriTemplate" class="form-control" />
+                <span asp-validation-for="PriTemplate" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="PriIseditable" /> @Html.DisplayNameFor(model => model.PriIseditable)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="PriOsqueue" class="control-label"></label>
+                <input asp-for="PriOsqueue" class="form-control" />
+                <span asp-validation-for="PriOsqueue" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PriUrl" class="control-label"></label>
+                <input asp-for="PriUrl" class="form-control" />
+                <span asp-validation-for="PriUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

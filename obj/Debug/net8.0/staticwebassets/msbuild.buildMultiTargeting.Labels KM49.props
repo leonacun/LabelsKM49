@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Labels KM49.props" />
+</Project>

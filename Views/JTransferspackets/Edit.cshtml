@@ -1,0 +1,80 @@
+﻿@model Labels_KM49.Models.JTransferspacket
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>JTransferspacket</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TspId" />
+            <div class="form-group">
+                <label asp-for="TspConnectionId" class="control-label"></label>
+                <select asp-for="TspConnectionId" class="form-control" asp-items="ViewBag.TspConnectionId"></select>
+                <span asp-validation-for="TspConnectionId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TspTcreation" class="control-label"></label>
+                <input asp-for="TspTcreation" class="form-control" />
+                <span asp-validation-for="TspTcreation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TspTimetransferred" class="control-label"></label>
+                <input asp-for="TspTimetransferred" class="form-control" />
+                <span asp-validation-for="TspTimetransferred" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TspExternalname" class="control-label"></label>
+                <input asp-for="TspExternalname" class="form-control" />
+                <span asp-validation-for="TspExternalname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TspQualifier1" class="control-label"></label>
+                <input asp-for="TspQualifier1" class="form-control" />
+                <span asp-validation-for="TspQualifier1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TspQualifier2" class="control-label"></label>
+                <input asp-for="TspQualifier2" class="form-control" />
+                <span asp-validation-for="TspQualifier2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TspStatus" class="control-label"></label>
+                <input asp-for="TspStatus" class="form-control" />
+                <span asp-validation-for="TspStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TspPrevstatus" class="control-label"></label>
+                <input asp-for="TspPrevstatus" class="form-control" />
+                <span asp-validation-for="TspPrevstatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TspData" class="control-label"></label>
+                <input asp-for="TspData" class="form-control" />
+                <span asp-validation-for="TspData" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TspTransferrefno" class="control-label"></label>
+                <input asp-for="TspTransferrefno" class="form-control" />
+                <span asp-validation-for="TspTransferrefno" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

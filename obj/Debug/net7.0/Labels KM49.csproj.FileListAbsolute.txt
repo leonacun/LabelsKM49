@@ -1,0 +1,8 @@
+C:\Users\leonacun\source\repos\Labels KM49\obj\Debug\net7.0\Labels KM49.csproj.AssemblyReference.cache
+C:\Users\leonacun\source\repos\Labels KM49\obj\Debug\net7.0\Labels KM49.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\leonacun\source\repos\Labels KM49\obj\Debug\net7.0\Labels KM49.AssemblyInfoInputs.cache
+C:\Users\leonacun\source\repos\Labels KM49\obj\Debug\net7.0\Labels KM49.AssemblyInfo.cs
+C:\Users\leonacun\source\repos\Labels KM49\obj\Debug\net7.0\Labels KM49.csproj.CoreCompileInputs.cache
+C:\Users\leonacun\source\repos\Labels KM49\obj\Debug\net7.0\Labels KM49.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\leonacun\source\repos\Labels KM49\obj\Debug\net7.0\Labels KM49.RazorAssemblyInfo.cache
+C:\Users\leonacun\source\repos\Labels KM49\obj\Debug\net7.0\Labels KM49.RazorAssemblyInfo.cs

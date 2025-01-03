@@ -1,0 +1,32 @@
+^XA
+
+^FX Top section with name and date
+^CF0,35
+^FO170,50^FDMAGNA ASSEMBLY SYSTEMS^FS
+^CF0,35
+^FO200,90^FD DE MEXICO S.A DE C.V^FS
+^CF0,25
+^FO650,50^FD@date^FS
+^FO670,80^FD@time^FS
+
+^FX Second section part, description and data load.
+^CF0,25
+^FO50,150^FDPART. NO:^FS
+^FO200,150^FD@part^FS
+
+^FO50,190^FDDESCRIPCION:^FS
+^FO210,190^FD@description^FS
+
+^FO50,230^FDVIN NO:^FS
+^FO160,230^FD@vin^FS
+
+^FO50,270^FDSEQUENCE: @sequence^FS
+
+^FX Third section with bar code.
+^BY2,2,60
+^FO680,120^BCB,,N^FDI@vin^FS
+
+^BY160,160^FT357,387^BXN,8,200,0,0,1,~
+^FH^FDI@fullvin_0DP@part^FS
+
+^XZ

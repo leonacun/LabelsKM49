@@ -1,0 +1,79 @@
+﻿@model Labels_KM49.Models.JTransferspacket
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>JTransferspacket</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TspTcreation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TspTcreation)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TspTimetransferred)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TspTimetransferred)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TspExternalname)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TspExternalname)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TspQualifier1)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TspQualifier1)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TspQualifier2)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TspQualifier2)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TspStatus)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TspStatus)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TspPrevstatus)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TspPrevstatus)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TspData)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TspData)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TspTransferrefno)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TspTransferrefno)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TspConnection)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TspConnection.TcId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.TspId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
