@@ -1100,9 +1100,9 @@ namespace Labels_KM49.Controllers
                         for (int i = 0; i < jitKM49.Count(); i++)
                         {
                             int creationYear = jitKM49[i].TspTcreation.Year;
-                            bool isYear2023 = creationYear == 2023;
-                            int getYear = isYear2023 ? 2023 : 2024;
-                            string yearIndex = getYear.ToString();
+                            //bool isYear2023 = creationYear == 2023;
+                            //int getYear = isYear2023 ? 2023 : 2024;
+                            string yearIndex = creationYear.ToString();
 
                             // Data Transform
                             System.String[] delimiters = { "  ", " ", ".", "KMX", "SPT40313", yearIndex, "0000" };
@@ -1169,9 +1169,9 @@ namespace Labels_KM49.Controllers
                         for (int i = 0; i < jitKM49.Count(); i++)
                         {
                             int creationYear = jitKM49[i].TspTcreation.Year;
-                            bool isYear2023 = creationYear == 2023;
-                            int getYear = isYear2023 ? 2023 : 2024;
-                            string yearIndex = getYear.ToString();
+                            //bool isYear2023 = creationYear == 2023;
+                            //int getYear = isYear2023 ? 2023 : 2024;
+                            string yearIndex = creationYear.ToString();
 
                             // Data Transform
                             System.String[] delimiters = { "  ", " ", ".", "KMX", "SPT40313", yearIndex, "0000" };
@@ -1268,10 +1268,10 @@ namespace Labels_KM49.Controllers
                         for (int i = 0; i < jitKM74.Count(); i++)
                         {
                             int creationYear = jitKM74[i].TspTcreation.Year;
-                            bool isYear2023 = creationYear == 2023;
-                            bool isYear2024 = creationYear == 2024;
-                            int getYear = isYear2023 ? 2023 : (isYear2024 ? 2024 : 2025);
-                            string yearIndex = getYear.ToString();
+                            //bool isYear2023 = creationYear == 2023;
+                            //bool isYear2024 = creationYear == 2024;
+                            //int getYear = isYear2023 ? 2023 : (isYear2024 ? 2024 : 2025);
+                            string yearIndex = creationYear.ToString();
 
                             // Data Transform
                             System.String[] delimiters = { "  ", " ", ".", "KMJ", "SPT40313", yearIndex, "0000", "001", "002" };
@@ -1319,9 +1319,9 @@ namespace Labels_KM49.Controllers
                     for (int i = 0; i < jitKM74X8W.Count(); i++)
                     {
                         int creationYear = jitKM74X8W[i].TspTcreation.Year;
-                        bool isYear2023 = creationYear == 2023;
-                        int getYear = isYear2023 ? 2023 : 2024;
-                        string yearIndex = getYear.ToString();
+                        //bool isYear2023 = creationYear == 2023;
+                        //int getYear = isYear2023 ? 2023 : 2024;
+                        string yearIndex = creationYear.ToString();
 
                         // Data Transform
                         string[] delimiters = { "  ", " ", ".", "KMJ", "SPT40313", yearIndex, "0000", "001", "002" };
@@ -1338,10 +1338,11 @@ namespace Labels_KM49.Controllers
                         bool lps = jitKM74X8W[i].TspData.Contains("LPS"); if (lps == true) color = "LPS";
 
                         //Insertar numero de parte si existe.
-                        bool lwrFront1 = jitKM74[i].TspData.Contains("7KL52GXHAA"); if (lwrFront1 == true) frLwrF = "7KL52GXHAA";
-                        bool lwrFront2 = jitKM74[i].TspData.Contains("68667445AA"); if (lwrFront2 == true) frLwrF = "68667445AA";
-                        bool lwrFront3 = jitKM74[i].TspData.Contains("68667446AA"); if (lwrFront3 == true) frLwrF = "68667446AA";
-                        bool lwrFront4 = jitKM74[i].TspData.Contains("68667801AA"); if (lwrFront4 == true) frLwrF = "68667801AA";
+
+                        bool lwrFront1 = jitKM74X8W[i].TspData.Contains("7KL52GXHAA"); if (lwrFront1 == true) frLwrF = "7KL52GXHAA";
+                        bool lwrFront2 = jitKM74X8W[i].TspData.Contains("68667445AA"); if (lwrFront2 == true) frLwrF = "68667445AA";
+                        bool lwrFront3 = jitKM74X8W[i].TspData.Contains("68667446AA"); if (lwrFront3 == true) frLwrF = "68667446AA";
+                        bool lwrFront4 = jitKM74X8W[i].TspData.Contains("68667801AA"); if (lwrFront4 == true) frLwrF = "68667801AA";
 
                         // Create a Km74 object with the corresponding data
                         Km74 piloto = new Km74
@@ -1401,9 +1402,9 @@ namespace Labels_KM49.Controllers
                     for (int i = 0; i < jitKM74.Count(); i++)
                     {
                         int creationYear = jitKM74[i].TspTcreation.Year;
-                        bool isYear2023 = creationYear == 2023;
-                        int getYear = isYear2023 ? 2023 : 2024;
-                        string yearIndex = getYear.ToString();
+                        //bool isYear2023 = creationYear == 2023;
+                        //int getYear = isYear2023 ? 2023 : 2024;
+                        string yearIndex = creationYear.ToString();
 
                         // Data Transform
                         System.String[] delimiters = { "  ", " ", ".", "KMJ", "SPT40313", yearIndex, "0000" };

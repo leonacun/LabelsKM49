@@ -277,8 +277,8 @@ namespace Labels_KM49.Controllers
                 List<PilotosList> getKM = await _contextPilotos.PilotosLists.OrderByDescending(x => x.Id).ToListAsync();
                 List<Ejlist> getEJ = await _contextPilotos.Ejlists.OrderByDescending(x => x.Id).ToListAsync();
 
-                var lastGetKM = getKM.GroupBy(x => x.Vin).Select(g => g.First()).ToList();
-                var lastGetEJ = getEJ.GroupBy(x => x.Vin).Select(g => g.First()).ToList();
+                var lastGetKM = getKM.GroupBy(x => x.Id).Select(g => g.First()).ToList();
+                var lastGetEJ = getEJ.GroupBy(x => x.Id).Select(g => g.First()).ToList();
 
                 List<Km49E> getKMe = await _contextPilotos.Km49Es.ToListAsync();
                 List<Km49Fa> getKMFA = await _contextPilotos.Km49Fas.ToListAsync();
@@ -405,8 +405,8 @@ namespace Labels_KM49.Controllers
                 List<PilotosList> getKM = await _contextPilotos.PilotosLists.OrderByDescending(x => x.Id).ToListAsync();
                 List<Ejlist> getEJ = await _contextPilotos.Ejlists.OrderByDescending(x => x.Id).ToListAsync();
 
-                var lastGetKM = getKM.GroupBy(x => x.Vin).Select(g => g.First()).ToList();
-                var lastGetEJ = getEJ.GroupBy(x => x.Vin).Select(g => g.First()).ToList();
+                var lastGetKM = getKM.GroupBy(x => x.Id).Select(g => g.First()).ToList();
+                var lastGetEJ = getEJ.GroupBy(x => x.Id).Select(g => g.First()).ToList();
 
                 //List<Km49E> getKMe = await _contextPilotos.Km49Es.ToListAsync();
                 //List<Km49Fa> getKMFA = await _contextPilotos.Km49Fas.ToListAsync();
@@ -556,9 +556,9 @@ namespace Labels_KM49.Controllers
                         for (int i = 0; i < jitKM49.Count(); i++)
                         {
                             int creationYear = jitKM49[i].TspTcreation.Year;
-                            bool isYear2023 = creationYear == 2023;
-                            int getYear = isYear2023 ? 2023 : 2024;
-                            string yearIndex = getYear.ToString();
+                            //bool isYear2023 = creationYear == 2023;
+                            //int getYear = isYear2023 ? 2023 : 2024;
+                            string yearIndex = creationYear.ToString();
 
                             // Data Transform
                             System.String[] delimiters = { "  ", " ", ".", "KMX", "SPT40313", yearIndex, "0000" };
@@ -618,9 +618,9 @@ namespace Labels_KM49.Controllers
                     for (int i = 0; i < jitKM49.Count(); i++)
                     {
                         int creationYear = jitKM49[i].TspTcreation.Year;
-                        bool isYear2023 = creationYear == 2023;
-                        int getYear = isYear2023 ? 2023 : 2024;
-                        string yearIndex = getYear.ToString();
+                        //bool isYear2023 = creationYear == 2023;
+                        //int getYear = isYear2023 ? 2023 : 2024;
+                        string yearIndex = creationYear.ToString();
 
                         // Data Transform
                         System.String[] delimiters = { "  ", " ", ".", "KMX", "SPT40313", yearIndex, "0000" };
@@ -800,14 +800,14 @@ namespace Labels_KM49.Controllers
                 && x.TspData.Contains("X8V")
                 && x.TspData.Contains("G ")
                 && x.TspData.Contains("3C4RJNA")
-                && x.TspTcreation >= dateTime.AddDays(-10))
+                && x.TspTcreation >= dateTime.AddDays(-5))
                     .OrderByDescending(x => x.TspTcreation)
                     .FirstOrDefaultAsync();
 
             var lastEJ = await _context.JTransferspackets.Where(x => x.TspData.Contains("SP")
                 && x.TspData.Contains("EJ")
                 && x.TspData.Contains("G ")
-                && x.TspTcreation >= dateTime.AddDays(-10))
+                && x.TspTcreation >= dateTime.AddDays(-5))
                     .OrderByDescending(x => x.TspTcreation)
                     .FirstOrDefaultAsync();
 
@@ -898,9 +898,9 @@ namespace Labels_KM49.Controllers
                     for (int i = 0; i < values.Count; i++)
                     {
                         int creationYear = values[i].TspTcreation.Year;
-                        bool isYear2023 = creationYear == 2023;
-                        int getYear = isYear2023 ? 2023 : 2024;
-                        string yearIndex = getYear.ToString();
+                        //bool isYear2023 = creationYear == 2023;
+                        //int getYear = isYear2023 ? 2023 : 2024;
+                        string yearIndex = creationYear.ToString();
 
                         // Data Transform
                         System.String[] delimiters = { "  ", " ", ".", "KMX", "SPT40313", yearIndex, "0000" };
@@ -956,9 +956,9 @@ namespace Labels_KM49.Controllers
                     for (int i = 0; i < values.Count; i++)
                     {
                         int creationYear = values[i].TspTcreation.Year;
-                        bool isYear2023 = creationYear == 2023;
-                        int getYear = isYear2023 ? 2023 : 2024;
-                        string yearIndex = getYear.ToString();
+                        //bool isYear2023 = creationYear == 2023;
+                        //int getYear = isYear2023 ? 2023 : 2024;
+                        string yearIndex = creationYear.ToString();
 
                         // Data Transform
                         System.String[] delimiters = { "  ", " ", ".", "KMX", "SPT40313", yearIndex, "0000" };
@@ -1029,9 +1029,9 @@ namespace Labels_KM49.Controllers
                         for (int i = 0; i < values.Count; i++)
                         {
                             int creationYear = values[i].TspTcreation.Year;
-                            bool isYear2023 = creationYear == 2023;
-                            int getYear = isYear2023 ? 2023 : 2024;
-                            string yearIndex = getYear.ToString();
+                            //bool isYear2023 = creationYear == 2023;
+                            //int getYear = isYear2023 ? 2023 : 2024;
+                            string yearIndex = creationYear.ToString();
 
                             // Data Transform
                             System.String[] delimiters = { "  ", " ", ".", "KMX", "SPT40313", yearIndex, "0000" };
@@ -1094,9 +1094,9 @@ namespace Labels_KM49.Controllers
                     for (int i = 0; i < values.Count; i++)
                     {
                         int creationYear = values[i].TspTcreation.Year;
-                        bool isYear2023 = creationYear == 2023;
-                        int getYear = isYear2023 ? 2023 : 2024;
-                        string yearIndex = getYear.ToString();
+                        //bool isYear2023 = creationYear == 2023;
+                        //int getYear = isYear2023 ? 2023 : 2024;
+                        string yearIndex = creationYear.ToString();
 
                         // Data Transform
                         System.String[] delimiters = { "  ", " ", ".", "KMX", "SPT40313", yearIndex, "0000" };
@@ -1156,7 +1156,7 @@ namespace Labels_KM49.Controllers
                 && x.TspData.Contains("EJ")
                 && x.TspData.Contains("X8W")
                 && x.TspData.Contains("E ")
-                && x.TspTcreation >= dateTime.AddDays(-50))
+                && x.TspTcreation >= dateTime.AddDays(-10))
                     .OrderByDescending(x => x.TspTcreation)
                     .FirstOrDefaultAsync();
 
@@ -1176,8 +1176,12 @@ namespace Labels_KM49.Controllers
                     {
                         for (int i = 0; i < jitEJ.Count(); i++)
                         {
+                            int creationYear = jitEJ[i].TspTcreation.Year;
+                            //bool isYear2023 = creationYear == 2023;
+                            //int getYear = isYear2023 ? 2023 : 2024;
+                            string yearIndex = creationYear.ToString();
                             // Data Transform
-                            System.String[] delimiters = { "  ", " ", ".", "SPT40313", "EJ", "2024", "0000" };
+                            System.String[] delimiters = { "  ", " ", ".", "SPT40313", "EJ", yearIndex, "0000" };
                             string vins = jitEJ[i].TspData.ToString();
                             string[] subs = vins.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
                             sbs22 = long.Parse(subs[2]);
@@ -1230,8 +1234,12 @@ namespace Labels_KM49.Controllers
                 {
                     for (int i = 0; i < jitEJ.Count(); i++)
                     {
+                        int creationYear = jitEJ[i].TspTcreation.Year;
+                        //bool isYear2023 = creationYear == 2023;
+                        //int getYear = isYear2023 ? 2023 : 2024;
+                        string yearIndex = creationYear.ToString();
                         // Data Transform
-                        System.String[] delimiters = { "  ", " ", ".", "SPT40313", "EJ", "2024", "0000" };
+                        System.String[] delimiters = { "  ", " ", ".", "SPT40313", "EJ", yearIndex, "0000" };
                         string vins = jitEJ[i].TspData.ToString();
                         string[] subs = vins.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
                         sbs22 = long.Parse(subs[2]);
@@ -1298,8 +1306,12 @@ namespace Labels_KM49.Controllers
                     {
                         for (int i = 0; i < jitEJ.Count(); i++)
                         {
+                            int creationYear = jitEJ[i].TspTcreation.Year;
+                            //bool isYear2023 = creationYear == 2023;
+                            //int getYear = isYear2023 ? 2023 : 2024;
+                            string yearIndex = creationYear.ToString();
                             // Data Transform
-                            System.String[] delimiters = { "  ", " ", ".", "SPT40313", "EJ", "2024", "0000" };
+                            System.String[] delimiters = { "  ", " ", ".", "SPT40313", "EJ", yearIndex, "0000" };
                             string vins = jitEJ[i].TspData.ToString();
                             string[] subs = vins.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
                             sbs22 = long.Parse(subs[2]);
@@ -1351,8 +1363,12 @@ namespace Labels_KM49.Controllers
                 {
                     for (int i = 0; i < jitEJ.Count(); i++)
                     {
+                        int creationYear = jitEJ[i].TspTcreation.Year;
+                        //bool isYear2023 = creationYear == 2023;
+                        //int getYear = isYear2023 ? 2023 : 2024;
+                        string yearIndex = creationYear.ToString();
                         // Data Transform
-                        System.String[] delimiters = { "  ", " ", ".", "SPT40313", "EJ", "2024", "0000" };
+                        System.String[] delimiters = { "  ", " ", ".", "SPT40313", "EJ", yearIndex, "0000" };
                         string vins = jitEJ[i].TspData.ToString();
                         string[] subs = vins.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
                         sbs22 = long.Parse(subs[2]);

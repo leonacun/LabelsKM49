@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Labels KM49")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aec45a0ec7f7a131c5215ce449e888c81c0f4bf4")]
 [assembly: System.Reflection.AssemblyProductAttribute("Labels KM49")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Labels KM49")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
